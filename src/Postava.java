@@ -1,18 +1,6 @@
 public class Postava {
+    private String jmeno;
 
-    public Postava(String jmeno) {
-
-    }
-
-    public String getJmeno() {
-        return null;
-    }
-
-    public boolean lzeMluvit(Inventar inventar) {
-        return false;
-    }
-
-    public Character mluv() {
-        return null;
-    }
+    public String getJmeno() { return null; }
+    public String mluv() { return null; }
 }

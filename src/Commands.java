@@ -1,11 +1,3 @@
-
 public class Commands {
-
-    public Commands() {
-
-    }
-
-    public Prikaz zpracujVstup(String vstup) {
-        return null;
-    }
+    public Prikaz zpracujVstup(String vstup) { return null; }
 }
