@@ -21,4 +21,3 @@ public class Postava {
         this.proslov = proslov;
     }
 }
-
