@@ -1,3 +1,8 @@
+### MOJE VLASTNÍ (Pro vyčištění repozitáře) ###
+.idea/
+*.iml
+ProjektOuter-master/
+
 ### IntelliJ IDEA ###
 out/
 !**/src/main/**/out/
