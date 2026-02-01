@@ -1,0 +1,10 @@
+[33m8f5ba21[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m)[m Oprava ignorovaných souborů
+[33m9477ee9[m add class for NPCs - Postava.java
+[33mba2e06b[m add class for NPCs - Postava.java
+[33m318ccf1[m add class for NPCs - Postava.java
+[33mc40805d[m add class for NPCs - Postava.java
+[33m9a5f1a0[m Merge remote-tracking branch 'origin/master'
+[33m8ef57d5[m implement JSON world loading and movement logic
+[33m6b52050[m Add command pattern structure
+[33m71a543e[m Add command pattern structure
+[33m35774a0[m Initial commit

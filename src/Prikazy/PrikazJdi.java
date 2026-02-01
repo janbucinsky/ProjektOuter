@@ -3,17 +3,21 @@ package Prikazy;
 import Hra.Hrac;
 import Hra.Lokace;
 
-public class PrikazJdi extends Prikazy{
+public class PrikazJdi implements IPrikaz {
     private Hrac hrac;
 
     public PrikazJdi(Hrac hrac) {
+
         this.hrac = hrac;
     }
 
-    public String proved(String kam) {
-        if (kam.isEmpty()) {
+    @Override
+    public String proved(String[] parametry) {
+        if (parametry.length < 2) {
             return "Musíš napsat, kam chceš jít.";
         }
+
+        String kam = parametry[1];
 
         Lokace aktualni = hrac.getAktualniLokace();
         Lokace cilova = null;
@@ -32,5 +36,10 @@ public class PrikazJdi extends Prikazy{
         } else {
             return "Tudy se odsud nedostaneš. Pořád jsi v: " + aktualni.getName();
         }
+    }
+
+    @Override
+    public String getJmeno() {
+        return "jdi";
     }
 }

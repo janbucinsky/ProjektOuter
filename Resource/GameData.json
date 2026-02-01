@@ -41,60 +41,67 @@
       "type": "TRAP",
       "description": "Nález z kostela, který má za úkol mást hráče.",
       "isUseful": false
+    },
+    {
+      "id": "kompas",
+      "name": "kompas",
+      "type": "QUEST_ITEM",
+      "description": "Tátův starý kompas se šifrou.",
+      "isUseful": true
     }
   ],
   "characters": [
     {
-      "id": "char_john_b",
+      "id": "john_b",
       "name": "John B.",
       "role": "PLAYER",
       "description": "Vůdce Pogues hledající poklad z Royal Merchant.",
       "homeLocationId": "chateau"
     },
     {
-      "id": "char_heyward",
+      "id": "heyward",
       "name": "Heyward",
       "role": "QUEST_GIVER",
       "description": "Majitel obchodu v přístavu. Předá úvodní indicii.",
       "homeLocationId": "cut_harbor"
     },
     {
-      "id": "char_kiara",
+      "id": "kiara",
       "name": "Kiara (Kie)",
       "role": "ALLY",
       "description": "Členka Pogues z restaurace The Wreck. Předá baterku a část hesla.",
       "homeLocationId": "the_wreck"
     },
     {
-      "id": "char_jj",
+      "id": "jj",
       "name": "JJ",
       "role": "ALLY",
       "description": "Impulsivní přítel z vrakoviště. Dodá část šifry v těžké chvíli.",
       "homeLocationId": "junkyard"
     },
     {
-      "id": "char_pope",
+      "id": "pope",
       "name": "Pope",
       "role": "GUIDE",
       "description": "Nejchytřejší člen party u majáku. Pomůže s logikou šifry.",
       "homeLocationId": "lighthouse"
     },
     {
-      "id": "char_sarah_cameron",
+      "id": "sarah_cameron",
       "name": "Sarah Cameron",
       "role": "KEY_ALLY",
       "description": "Dcera Warda. Předá důležité písmeno z otcovy schránky.",
       "homeLocationId": "figure_eight"
     },
     {
-      "id": "char_topper",
+      "id": "topper",
       "name": "Topper",
       "role": "OBSTACLE",
       "description": "Překážka u kostela, kterou je třeba přelstít.",
       "homeLocationId": "tannyhill_church"
     },
     {
-      "id": "char_ward_cameron",
+      "id": "ward_cameron",
       "name": "Ward Cameron",
       "role": "ANTAGONIST",
       "description": "Hlavní záporák a rival. Finální střet u staré studny.",
@@ -103,58 +110,90 @@
   ],
   "locations": [
     {
-      "id": "loc_chateau",
+      "id": "chateau",
       "name": "The Chateau",
       "description": "Tvůj domov, kde objevuješ tátův kompas se šifrou.",
-      "neighbors": ["cut_harbor"]
+      "neighbors": [
+        "cut_harbor"
+      ],
+      "predmety": [
+        {
+          "id": "kompas",
+          "name": "kompas",
+          "description": "Tátův starý kompas se šifrou."
+        }
+      ]
     },
     {
-      "id": "loc_cut_harbor",
+      "id": "cut_harbor",
       "name": "The Cut Harbor",
       "description": "Přístav, kde Heyward předává první indicii a lístek na přívoz.",
-      "neighbors": ["chateau", "the_wreck"]
+      "neighbors": [
+        "chateau",
+        "the_wreck"
+      ]
     },
     {
-      "id": "loc_the_wreck",
+      "id": "the_wreck",
       "name": "The Wreck",
       "description": "Restaurace, kde ti Kiara dá baterku a další část hesla.",
-      "neighbors": ["cut_harbor", "junkyard"]
+      "neighbors": [
+        "cut_harbor",
+        "junkyard"
+      ]
     },
     {
-      "id": "loc_junkyard",
+      "id": "junkyard",
       "name": "Vrakoviště",
       "description": "JJho revír. Pozor na zbytečné věci, hledej další část šifry.",
-      "neighbors": ["the_wreck", "lighthouse"]
+      "neighbors": [
+        "the_wreck",
+        "lighthouse"
+      ]
     },
     {
-      "id": "loc_lighthouse",
+      "id": "lighthouse",
       "name": "Maják",
       "description": "Old Baldy Lighthouse, kde Pope vysvětluje logiku šifry.",
-      "neighbors": ["junkyard", "ferry_crossing"]
+      "neighbors": [
+        "junkyard",
+        "ferry_crossing"
+      ]
     },
     {
-      "id": "loc_ferry_crossing",
+      "id": "ferry_crossing",
       "name": "The Ferry Crossing",
       "description": "Hraniční přechod. Musíš mít lístek, abys mohl do Figure Eight.",
-      "neighbors": ["lighthouse", "figure_eight"]
+      "neighbors": [
+        "lighthouse",
+        "figure_eight"
+      ]
     },
     {
-      "id": "loc_figure_eight",
+      "id": "figure_eight",
       "name": "Figure Eight",
       "description": "Čtvrť Kooks. Sarah ti zde pomůže s písmenem z tátovy schránky.",
-      "neighbors": ["ferry_crossing", "tannyhill_church"]
+      "neighbors": [
+        "ferry_crossing",
+        "tannyhill_church"
+      ]
     },
     {
-      "id": "loc_tannyhill_church",
+      "id": "tannyhill_church",
       "name": "Tannyhill Church",
       "description": "Kostel s kryptou. Topper hlídkuje venku, ty musíš dovnitř.",
-      "neighbors": ["figure_eight", "old_well"]
+      "neighbors": [
+        "figure_eight",
+        "old_well"
+      ]
     },
     {
-      "id": "loc_old_well",
+      "id": "old_well",
       "name": "Stará studna",
       "description": "Místo finálního střetu s Wardem. Tady se zadává výsledné heslo.",
-      "neighbors": ["tannyhill_church"]
+      "neighbors": [
+        "tannyhill_church"
+      ]
     }
   ]
 }
