@@ -26,7 +26,6 @@ public class Hra {
         platnePrikazy.vlozPrikaz(new PrikazProzkoumej(hrac));
         platnePrikazy.vlozPrikaz(new PrikazNapoveda(platnePrikazy));
         platnePrikazy.vlozPrikaz(new PrikazPouzij(hrac));
-        platnePrikazy.vlozPrikaz(new PrikazOdpovez(this, hrac));
 
 
         Postava pruvodce = new Postava("Pruvodce", "Vítej v Chateau! Dávej pozor na strašidla.");
