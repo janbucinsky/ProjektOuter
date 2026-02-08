@@ -15,26 +15,45 @@ public class Inventar {
 
     public boolean vlozPredmet(Predmet predmet) {
         if (veci.size() < kapacita) {
-            veci.put(predmet.getName().toLowerCase(), predmet);
+            veci.put(predmet.getId().toLowerCase(), predmet); // Changed key to ID
             return true;
         }
         return false;
     }
 
     public Predmet vyberPredmet(String nazev) {
-        String klic = nazev.toLowerCase().trim();
-        if (veci.containsKey(klic)) {
-            return veci.remove(klic);
+        // Try ID first
+        if (veci.containsKey(nazev.toLowerCase())) {
+            return veci.remove(nazev.toLowerCase());
         }
-        return null; // Predmet neni v inventari
+
+        // Try searching by name
+        for (Predmet p : veci.values()) {
+            if (p.getName().equalsIgnoreCase(nazev)) {
+                veci.remove(p.getId().toLowerCase());
+                return p;
+            }
+        }
+        return null;
     }
 
     public Predmet getPredmet(String nazev) {
-        return veci.get(nazev.toLowerCase().trim());
+        // Try ID first
+        if (veci.containsKey(nazev.toLowerCase())) {
+            return veci.get(nazev.toLowerCase());
+        }
+
+        // Try searching by name
+        for (Predmet p : veci.values()) {
+            if (p.getName().equalsIgnoreCase(nazev)) {
+                return p;
+            }
+        }
+        return null;
     }
 
     public boolean obsahujePredmet(String nazev) {
-        return veci.containsKey(nazev.toLowerCase().trim());
+        return getPredmet(nazev) != null;
     }
 
     public String getSeznamVeci() {
@@ -42,8 +61,13 @@ public class Inventar {
             return "Inventář je prázdný.";
         }
         String seznam = "V inventáři máš: ";
-        for (String jmeno : veci.keySet()) {
-            seznam += jmeno + " ";
+        int count = 0;
+        for (Predmet p : veci.values()) {
+            seznam += p.getName();
+            if (count < veci.size() - 1) {
+                seznam += ", ";
+            }
+            count++;
         }
         return seznam;
     }

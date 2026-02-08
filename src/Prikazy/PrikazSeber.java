@@ -20,10 +20,10 @@ public class PrikazSeber implements IPrikaz {
         String jmenoPredmetu = parametry[1].trim();
         Lokace aktualniLokace = hrac.getAktualniLokace();
 
-        if (aktualniLokace.obsahujePredmet(jmenoPredmetu)) {
-            Predmet predmet = aktualniLokace.seberPredmet(jmenoPredmetu);
+        Predmet predmet = aktualniLokace.seberPredmet(jmenoPredmetu);
+        if (predmet != null) {
             if (hrac.seberPredmet(predmet)) {
-                return "Sebral jsi " + jmenoPredmetu;
+                return "Sebral jsi " + predmet.getName();
             } else {
                 aktualniLokace.vlozPredmet(predmet); // vratime zpatky
                 return "Tvůj batoh je plný!";

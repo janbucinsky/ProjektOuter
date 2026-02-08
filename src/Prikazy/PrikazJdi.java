@@ -32,16 +32,31 @@ public class PrikazJdi implements IPrikaz {
 
         if (cilova != null) {
             if (cilova.getId().equals("figure_eight")) {
-                if (hrac.getInventar().getPredmet("listek_na_privoz") == null) {
-                    return "Prevoznik te nechce pustit, potrebujes listek";
+                if (hrac.getInventar().getPredmet("listek") == null) {
+                    return "Prevoznik te nechce pustit, potrebujes listek (ten se nachází skoro na začatku, v cut_harbor";
                 }
             }
 
             hrac.setAktualniLokace(cilova);
-            return "Jsi v: " + cilova.getName() + ".\n" + cilova.getDescription() + "\n" + "Předměty: "
-                    + cilova.getSeznamPredmetu();
+
+            String vychody = "Východy: ";
+
+            if (cilova.getNeighborIds() != null) {
+                for (int i = 0; i < cilova.getNeighborIds().size(); i++) {
+                    vychody += cilova.getNeighborIds().get(i);
+                    if (i < cilova.getNeighborIds().size() - 1) {
+                        vychody += ", ";
+                    }
+                }
+
+            }
+
+            return "Jsi v: " + cilova.getName() + ".\n" + cilova.getDescription() + "\n"
+                    + "Předměty: " + cilova.getSeznamPredmetu() + "\n"
+                    + "Postavy: " + cilova.getSeznamPostav() + "\n"
+                    + vychody;
         } else {
-            return "Tudy se odsud nedostaneš. Pořád jsi v: " + aktualni.getName();
+            return "Tudy se odsud nedostaneš. Pořád jsi v:" + aktualni.getName();
         }
     }
 

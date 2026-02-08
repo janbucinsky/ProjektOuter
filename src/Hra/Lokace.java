@@ -11,7 +11,6 @@ public class Lokace {
     private ArrayList<Predmet> predmety = new ArrayList<>();
     private ArrayList<Postava> postavy = new ArrayList<>();
 
-
     public String getId() {
         return id;
     }
@@ -36,7 +35,7 @@ public class Lokace {
 
     public Predmet seberPredmet(String nazevPredmetu) {
         for (Predmet p : predmety) {
-            if (p.getName().equalsIgnoreCase(nazevPredmetu)) {
+            if (p.getName().equalsIgnoreCase(nazevPredmetu) || p.getId().equalsIgnoreCase(nazevPredmetu)) {
                 predmety.remove(p);
                 return p;
             }
@@ -46,7 +45,7 @@ public class Lokace {
 
     public boolean obsahujePredmet(String nazevPredmetu) {
         for (Predmet p : predmety) {
-            if (p.getName().equalsIgnoreCase(nazevPredmetu)) {
+            if (p.getName().equalsIgnoreCase(nazevPredmetu) || p.getId().equalsIgnoreCase(nazevPredmetu)) {
                 return true;
             }
         }
@@ -58,8 +57,25 @@ public class Lokace {
             return "nic";
         }
         StringBuilder seznam = new StringBuilder();
-        for (Predmet p : predmety) {
-            seznam.append(p.getName()).append(" ");
+        for (int i = 0; i < predmety.size(); i++) {
+            seznam.append(predmety.get(i).getName());
+            if (i < predmety.size() - 1) {
+                seznam.append(", ");
+            }
+        }
+        return seznam.toString();
+    }
+
+    public String getSeznamPostav() {
+        if (postavy.isEmpty()) {
+            return "nikdo";
+        }
+        StringBuilder seznam = new StringBuilder();
+        for (int i = 0; i < postavy.size(); i++) {
+            seznam.append(postavy.get(i).getName());
+            if (i < postavy.size() - 1) {
+                seznam.append(", ");
+            }
         }
         return seznam.toString();
     }
@@ -70,7 +86,7 @@ public class Lokace {
 
     public Postava getPostava(String jmeno) {
         for (Postava p : postavy) {
-            if (p.getJmeno().equalsIgnoreCase(jmeno)) {
+            if (p.getJmeno().equalsIgnoreCase(jmeno) || (p.getId() != null && p.getId().equalsIgnoreCase(jmeno))) {
                 return p;
             }
         }

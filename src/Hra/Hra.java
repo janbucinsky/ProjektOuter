@@ -24,12 +24,11 @@ public class Hra {
         platnePrikazy.vlozPrikaz(new PrikazInventar(hrac));
         platnePrikazy.vlozPrikaz(new PrikazMluv(hrac));
         platnePrikazy.vlozPrikaz(new PrikazProzkoumej(hrac));
-        platnePrikazy.vlozPrikaz(new PrikazNapoveda(platnePrikazy));
+        platnePrikazy.vlozPrikaz(new PrikazNapoveda(hrac));
         platnePrikazy.vlozPrikaz(new PrikazPouzij(hrac));
-
-
-        Postava pruvodce = new Postava("Pruvodce", "Vítej v Chateau! Dávej pozor na strašidla.");
-        startovniLokace.vlozPostavu(pruvodce);
+        platnePrikazy.vlozPrikaz(new PrikazOdpovez(hrac));
+        platnePrikazy.vlozPrikaz(new PrikazZadej(this, hrac));
+        platnePrikazy.vlozPrikaz(new PrikazZapis(hrac));
     }
 
     public void doPlay() {
@@ -80,4 +79,3 @@ public class Hra {
         System.out.println("konec hry");
     }
 }
-

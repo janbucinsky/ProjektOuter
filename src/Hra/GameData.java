@@ -9,12 +9,13 @@ import java.util.ArrayList;
 public class GameData {
     public ArrayList<Predmet> items;
     public ArrayList<Lokace> locations;
-    public ArrayList<Hrac> characters;
+    public ArrayList<Postava> characters;
 
     public static GameData loadGameDataFromResources(String resourcePath) {
         Gson gson = new Gson();
         try (InputStream is = GameData.class.getResourceAsStream(resourcePath)) {
-            if (is == null) throw new IllegalStateException("Nenalezen: " + resourcePath);
+            if (is == null)
+                throw new IllegalStateException("Nenalezen: " + resourcePath);
             GameData data = gson.fromJson(new InputStreamReader(is, StandardCharsets.UTF_8), GameData.class);
             data.propojLokace();
             return data;
@@ -24,20 +25,36 @@ public class GameData {
     }
 
     private void propojLokace() {
-        if (locations == null) return;
+        if (locations == null)
+            return;
         for (Lokace loc : locations) {
             ArrayList<String> nIds = loc.getNeighborIds();
-            if (nIds == null) continue;
-            for (String id : nIds) {
-                Lokace soused = najdiLokaci(id);
-                if (soused != null) loc.pridejSouseda(soused);
+            if (nIds != null) {
+                for (String id : nIds) {
+                    Lokace soused = najdiLokaci(id);
+                    if (soused != null)
+                        loc.pridejSouseda(soused);
+                }
+            }
+        }
+
+        // Place characters
+        if (characters != null) {
+            for (Postava p : characters) {
+                if ("PLAYER".equalsIgnoreCase(p.getRole()))
+                    continue; // Skip player character in room list
+                Lokace loc = najdiLokaci(p.getHomeLocationId());
+                if (loc != null) {
+                    loc.vlozPostavu(p);
+                }
             }
         }
     }
 
     public Lokace najdiLokaci(String id) {
         for (Lokace l : locations) {
-            if (l.getId().equals(id)) return l;
+            if (l.getId().equals(id))
+                return l;
         }
         return null;
     }

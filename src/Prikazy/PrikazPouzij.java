@@ -36,18 +36,18 @@ public class PrikazPouzij implements IPrikaz {
                     return "dopsat";
                 }
                 return "dopsat";
-            case "listek_na_privoz":
+            case "listek":
                 if (aktualniLokace.getId().equals("ferry_crossing")) {
-                    return "dopsat";
+                    return "Ukázal jsi lístek. Převozník kývnul: 'Můžeš nastoupit na loď do Figure Eight.'";
                 }
-                return "dopsat";
+                return "Tady lístek nikomu neukazuj. (bude se ti hodit až v ferry_crossing)";
             case "zlaty_nuget":
                 if (aktualniLokace.getId().equals("figure_eight")) {
                     return "dopsat";
                 }
-                return "dopsat";
+                return "Tohle je cenné, ale tady ti to k ničemu není.";
             default:
-                return "dopsat";
+                return "Nic se nestalo.";
         }
     }
 

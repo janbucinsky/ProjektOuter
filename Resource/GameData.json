@@ -1,7 +1,7 @@
 {
   "items": [
     {
-      "id": "listek_na_privoz",
+      "id": "listek",
       "name": "Lístek na přívoz",
       "type": "TICKET",
       "description": "Propustka do bohaté čtvrti Figure Eight. Nezbytný pro lokaci The Ferry Crossing.",
@@ -56,56 +56,64 @@
       "name": "John B.",
       "role": "PLAYER",
       "description": "Vůdce Pogues hledající poklad z Royal Merchant.",
-      "homeLocationId": "chateau"
+      "homeLocationId": "chateau",
+      "proslov": "Musím najít ten poklad."
     },
     {
       "id": "heyward",
       "name": "Heyward",
       "role": "QUEST_GIVER",
       "description": "Majitel obchodu v přístavu. Předá úvodní indicii.",
-      "homeLocationId": "cut_harbor"
+      "homeLocationId": "cut_harbor",
+      "proslov": "Ahoj Johne B! Mám pro tebe lístek na přívoz a taky vím jaké je první písménko hesla, ale musíš mi slíbit, že to nikomu neřekneš (Odpověz A: Slibuji / B: Nezájem)"
     },
     {
       "id": "kiara",
       "name": "Kiara (Kie)",
       "role": "ALLY",
       "description": "Členka Pogues z restaurace The Wreck. Předá baterku a část hesla.",
-      "homeLocationId": "the_wreck"
+      "homeLocationId": "the_wreck",
+      "proslov": "//TODO: Doplnit dialog."
     },
     {
       "id": "jj",
       "name": "JJ",
       "role": "ALLY",
       "description": "Impulsivní přítel z vrakoviště. Dodá část šifry v těžké chvíli.",
-      "homeLocationId": "junkyard"
+      "homeLocationId": "junkyard",
+      "proslov": "//TODO: Doplnit dialog."
     },
     {
       "id": "pope",
       "name": "Pope",
       "role": "GUIDE",
       "description": "Nejchytřejší člen party u majáku. Pomůže s logikou šifry.",
-      "homeLocationId": "lighthouse"
+      "homeLocationId": "lighthouse",
+      "proslov": "//TODO: Doplnit dialog."
     },
     {
       "id": "sarah_cameron",
       "name": "Sarah Cameron",
       "role": "KEY_ALLY",
       "description": "Dcera Warda. Předá důležité písmeno z otcovy schránky.",
-      "homeLocationId": "figure_eight"
+      "homeLocationId": "figure_eight",
+      "proslov": "//TODO: Doplnit dialog."
     },
     {
       "id": "topper",
       "name": "Topper",
       "role": "OBSTACLE",
       "description": "Překážka u kostela, kterou je třeba přelstít.",
-      "homeLocationId": "tannyhill_church"
+      "homeLocationId": "tannyhill_church",
+      "proslov": "//TODO: Doplnit dialog."
     },
     {
       "id": "ward_cameron",
       "name": "Ward Cameron",
       "role": "ANTAGONIST",
       "description": "Hlavní záporák a rival. Finální střet u staré studny.",
-      "homeLocationId": "old_well"
+      "homeLocationId": "old_well",
+      "proslov": "doplnit"
     }
   ],
   "locations": [
@@ -132,13 +140,7 @@
         "chateau",
         "the_wreck"
       ],
-      "predmety": [
-        {
-          "id": "listek_na_privoz",
-          "name": "Lístek na přívoz",
-          "description": "Propustka do bohaté čtvrti Figure Eight. Nezbytný pro lokaci The Ferry Crossing."
-        }
-      ]
+      "predmety": []
     },
     {
       "id": "the_wreck",
@@ -149,12 +151,6 @@
         "junkyard"
       ],
       "predmety": [
-        {
-          "id": "baterka",
-          "name": "Baterka",
-          "description": "Robustní svítilna od Kiary. Nutná pro průzkum krypty pod kostelem Tannyhill Church."
-        },
-
         {
           "id": "prazdna_plechovka",
           "name": "Prázdná plechovka od sody",
@@ -176,7 +172,6 @@
           "name": "Stará bójka",
           "description": "Zbytečný nález z vrakoviště, který jen zabírá místo v inventáři."
         },
-
         {
           "id": "zlaty_nuget",
           "name": "Zlatý nuget",
@@ -227,7 +222,6 @@
         }
       ]
     },
-
     {
       "id": "old_well",
       "name": "Stará studna",
@@ -238,4 +232,3 @@
     }
   ]
 }
-
