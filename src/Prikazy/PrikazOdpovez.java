@@ -1,7 +1,7 @@
 package Prikazy;
 
 public class PrikazOdpovez implements IPrikaz {
-//todo odpoved
+    //todo odpoved
     @Override
     public String proved(String[] parametry) {
         return "dodelat";

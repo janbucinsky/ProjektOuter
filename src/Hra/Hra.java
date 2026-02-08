@@ -25,6 +25,9 @@ public class Hra {
         platnePrikazy.vlozPrikaz(new PrikazMluv(hrac));
         platnePrikazy.vlozPrikaz(new PrikazProzkoumej(hrac));
         platnePrikazy.vlozPrikaz(new PrikazNapoveda(platnePrikazy));
+        platnePrikazy.vlozPrikaz(new PrikazPouzij(hrac));
+        platnePrikazy.vlozPrikaz(new PrikazOdpovez(this, hrac));
+
 
         Postava pruvodce = new Postava("Pruvodce", "Vítej v Chateau! Dávej pozor na strašidla.");
         startovniLokace.vlozPostavu(pruvodce);
@@ -50,7 +53,7 @@ public class Hra {
     }
 
     public String zpracujPrikaz(String radek) {
-        //mezera mezi dvema slovama
+        // mezera mezi dvema slovama
         String[] slova = radek.trim().split(" ");
         if (slova.length == 0) {
             return "Prázdný příkaz.";
@@ -72,4 +75,10 @@ public class Hra {
     public boolean isKonecHry() {
         return konecHry;
     }
+
+    public void vyhra() {
+        this.konecHry = true;
+        System.out.println("konec hry");
+    }
 }
+

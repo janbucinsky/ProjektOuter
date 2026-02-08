@@ -31,8 +31,15 @@ public class PrikazJdi implements IPrikaz {
         }
 
         if (cilova != null) {
+            if (cilova.getId().equals("figure_eight")) {
+                if (hrac.getInventar().getPredmet("listek_na_privoz") == null) {
+                    return "Prevoznik te nechce pustit, potrebujes listek";
+                }
+            }
+
             hrac.setAktualniLokace(cilova);
-            return "Jsi v: " + cilova.getName() + "\n" + cilova.getDescription();
+            return "Jsi v: " + cilova.getName() + ".\n" + cilova.getDescription() + "\n" + "Předměty: "
+                    + cilova.getSeznamPredmetu();
         } else {
             return "Tudy se odsud nedostaneš. Pořád jsi v: " + aktualni.getName();
         }

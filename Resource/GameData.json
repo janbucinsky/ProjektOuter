@@ -131,6 +131,13 @@
       "neighbors": [
         "chateau",
         "the_wreck"
+      ],
+      "predmety": [
+        {
+          "id": "listek_na_privoz",
+          "name": "Lístek na přívoz",
+          "description": "Propustka do bohaté čtvrti Figure Eight. Nezbytný pro lokaci The Ferry Crossing."
+        }
       ]
     },
     {
@@ -140,6 +147,19 @@
       "neighbors": [
         "cut_harbor",
         "junkyard"
+      ],
+      "predmety": [
+        {
+          "id": "baterka",
+          "name": "Baterka",
+          "description": "Robustní svítilna od Kiary. Nutná pro průzkum krypty pod kostelem Tannyhill Church."
+        },
+
+        {
+          "id": "prazdna_plechovka",
+          "name": "Prázdná plechovka od sody",
+          "description": "Odpad z restaurace The Wreck bez reálného využití."
+        }
       ]
     },
     {
@@ -149,6 +169,19 @@
       "neighbors": [
         "the_wreck",
         "lighthouse"
+      ],
+      "predmety": [
+        {
+          "id": "stara_bojka",
+          "name": "Stará bójka",
+          "description": "Zbytečný nález z vrakoviště, který jen zabírá místo v inventáři."
+        },
+
+        {
+          "id": "zlaty_nuget",
+          "name": "Zlatý nuget",
+          "description": "Úlomek zlata z Royal Merchant. Klíč k přesvědčení Sarah Cameron."
+        }
       ]
     },
     {
@@ -185,8 +218,16 @@
       "neighbors": [
         "figure_eight",
         "old_well"
+      ],
+      "predmety": [
+        {
+          "id": "rezavy_hrebik",
+          "name": "Rezavý hřebík",
+          "description": "Nález z kostela, který má za úkol mást hráče."
+        }
       ]
     },
+
     {
       "id": "old_well",
       "name": "Stará studna",
@@ -197,3 +238,4 @@
     }
   ]
 }
+
