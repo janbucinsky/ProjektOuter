@@ -14,7 +14,7 @@ public class PrikazJdi implements IPrikaz {
     @Override
     public String proved(String[] parametry) {
         if (parametry.length < 2) {
-            return "Musíš napsat, kam chceš jít.";
+            return "Musíš napsat, kam chceš jít. např: jdi cut_harbor";
         }
 
         String kam = parametry[1];

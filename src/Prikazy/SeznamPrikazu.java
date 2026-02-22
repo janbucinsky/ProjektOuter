@@ -3,7 +3,6 @@ package Prikazy;
 import java.util.HashMap;
 import java.util.Map;
 
-
 public class SeznamPrikazu {
 
     private Map<String, IPrikaz> mapaPrikazu;
@@ -26,7 +25,6 @@ public class SeznamPrikazu {
     public boolean jePlatnyPrikaz(String retezec) {
         return mapaPrikazu.containsKey(retezec);
     }
-
 
     public String vratNazvyPrikazu() {
         String seznam = "";

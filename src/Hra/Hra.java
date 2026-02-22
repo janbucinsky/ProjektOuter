@@ -35,6 +35,8 @@ public class Hra {
         System.out.println("Vítejte ve hře!");
         System.out.println("Jste v: " + hrac.getAktualniLokace().getName());
         System.out.println(hrac.getAktualniLokace().getDescription());
+        System.out.println("Dostupné příkazy: " + platnePrikazy.vratNazvyPrikazu());
+        System.out.println("Dostupné lokace: cut_harbor");
 
         Scanner scanner = new Scanner(System.in);
         while (!konecHry) {
