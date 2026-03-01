@@ -25,6 +25,35 @@ public class Hrac {
         this.aktualniLokace = lokace;
     }
 
+    private boolean prevozPouzit = false;
+
+    public boolean isPrevozPouzit() {
+        return prevozPouzit;
+    }
+
+    public void setPrevozPouzit(boolean pouzit) {
+        this.prevozPouzit = pouzit;
+    }
+
+    private int wardDialogueStage = 0;
+    private boolean wardPorazen = false;
+
+    public int getWardDialogueStage() {
+        return wardDialogueStage;
+    }
+
+    public void setWardDialogueStage(int stage) {
+        this.wardDialogueStage = stage;
+    }
+
+    public boolean isWardPorazen() {
+        return wardPorazen;
+    }
+
+    public void setWardPorazen(boolean porazen) {
+        this.wardPorazen = porazen;
+    }
+
     private java.util.List<String> nalezenaPismena = new java.util.ArrayList<>();
 
     public void pridejPismeno(String pismeno) {

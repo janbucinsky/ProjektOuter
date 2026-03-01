@@ -31,9 +31,23 @@ public class PrikazJdi implements IPrikaz {
         }
 
         if (cilova != null) {
+            String zpravaOListku = "";
+
             if (cilova.getId().equals("figure_eight")) {
-                if (hrac.getInventar().getPredmet("listek") == null) {
-                    return "Prevoznik te nechce pustit, potrebujes listek (ten se nachází skoro na začatku, v cut_harbor";
+                if (!hrac.isPrevozPouzit()) {
+                    if (hrac.getInventar().getPredmet("listek") == null) {
+                        return "Prevoznik te nechce pustit na druhou stranu, potrebujes listek (ten se nachází skoro na začatku, v cut_harbor).";
+                    } else {
+                        hrac.getInventar().vyberPredmet("listek");
+                        hrac.setPrevozPouzit(true);
+                        zpravaOListku = "(Využil jsi lístek na přívoz k přejezdu do Figure Eight. Byl odebrán z tvého inventáře. Teď už můžeš cestovat volně.)\n";
+                    }
+                }
+            }
+
+            if (cilova.getId().equals("old_well")) {
+                if (hrac.getInventar().getPredmet("baterka") == null) {
+                    return "V kryptě je úplná tma! Bez baterky (kterou má Kiara) se dál nedostaneš.";
                 }
             }
 
@@ -51,7 +65,7 @@ public class PrikazJdi implements IPrikaz {
 
             }
 
-            return "Jsi v: " + cilova.getName() + ".\n" + cilova.getDescription() + "\n"
+            return zpravaOListku + "Jsi v: " + cilova.getName() + ".\n" + cilova.getDescription() + "\n"
                     + "Předměty: " + cilova.getSeznamPredmetu() + "\n"
                     + "Postavy: " + cilova.getSeznamPostav() + "\n"
                     + vychody;

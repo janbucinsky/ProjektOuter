@@ -65,7 +65,7 @@
       "role": "QUEST_GIVER",
       "description": "Majitel obchodu v přístavu. Předá úvodní indicii.",
       "homeLocationId": "cut_harbor",
-      "proslov": "Ahoj Johne B! Mám pro tebe lístek na přívoz a taky vím jaké je první písménko hesla, ale musíš mi slíbit, že to nikomu neřekneš (Odpověz A: Slibuji / B: Nezájem)"
+      "proslov": "Ahoj Johne B! Mám pro tebe lístek na přívoz a taky vím, jaké je první písmenko hesla, ale musíš mi slíbit, že to nikomu neřekneš (Odpověz A: Slibuji / B: Nezájem)"
     },
     {
       "id": "kiara",
@@ -73,7 +73,7 @@
       "role": "ALLY",
       "description": "Členka Pogues z restaurace The Wreck. Předá baterku a část hesla.",
       "homeLocationId": "the_wreck",
-      "proslov": "//TODO: Doplnit dialog."
+      "proslov": "Ahoj Johne B! Mám pro tebe baterku a písmenko, ale nejdřív musíš uhodnout mou hádanku: Čím víc toho je, tím míň toho vidíš. Co je to? (Odpověz A: Mlha / B: Tma)"
     },
     {
       "id": "jj",
@@ -81,7 +81,7 @@
       "role": "ALLY",
       "description": "Impulsivní přítel z vrakoviště. Dodá část šifry v těžké chvíli.",
       "homeLocationId": "junkyard",
-      "proslov": "//TODO: Doplnit dialog."
+      "proslov": "Čau kámo! Máme novou loď, ale musíš uhodnout hádanku: Má to zuby, ale nekouše to, a bez toho se k pokladu neotevřou žádné dveře. Co je to? (Odpověz A: Klíč / B: Hřeben)"
     },
     {
       "id": "pope",
@@ -89,7 +89,7 @@
       "role": "GUIDE",
       "description": "Nejchytřejší člen party u majáku. Pomůže s logikou šifry.",
       "homeLocationId": "lighthouse",
-      "proslov": "//TODO: Doplnit dialog."
+      "proslov": "Johne, ta šifra dává smysl. Ale abys dostal další dílek skládačky, musíš použít hlavu: Co je tak křehké, že i když vyslovíš jeho jméno, tak ho rozbiješ? (Odpověz A: Sklo / B: Ticho)"
     },
     {
       "id": "sarah_cameron",
@@ -97,7 +97,7 @@
       "role": "KEY_ALLY",
       "description": "Dcera Warda. Předá důležité písmeno z otcovy schránky.",
       "homeLocationId": "figure_eight",
-      "proslov": "//TODO: Doplnit dialog."
+      "proslov": "Můj táta něco skrývá... Pokud mi přineseš ten zlatý nuget, dám ti písmena z jeho schránky, která ti chybí do hesla. Máš ho u sebe? (Odpověz A: Nemám / B: Tady je)"
     },
     {
       "id": "topper",
@@ -105,7 +105,7 @@
       "role": "OBSTACLE",
       "description": "Překážka u kostela, kterou je třeba přelstít.",
       "homeLocationId": "tannyhill_church",
-      "proslov": "//TODO: Doplnit dialog."
+      "proslov": "Co tu pohledáváš, Pogue? Uhodni tohle: Jsem srdcem věže, ale nejsem živý. Volám lidi k sobě, i když nemám hlas. Co jsem? (Odpověz A: Farář / B: Zvon)"
     },
     {
       "id": "ward_cameron",
@@ -113,7 +113,7 @@
       "role": "ANTAGONIST",
       "description": "Hlavní záporák a rival. Finální střet u staré studny.",
       "homeLocationId": "old_well",
-      "proslov": "doplnit"
+      "proslov": "Jsi stejný jako tvůj otec, Johne B. Myslíš si, že si můžeš jen tak vzít, co je moje. Vzdej to. (Odpověz A: Nejsem jako on! / B: Možná máš pravdu.)"
     }
   ],
   "locations": [
@@ -225,7 +225,7 @@
     {
       "id": "old_well",
       "name": "Stará studna",
-      "description": "Místo finálního střetu s Wardem. Tady se zadává výsledné heslo.",
+      "description": "Pro dohrání hry musíš mít u sebe baterku, porazit Warda (příkaz 'mluv') a poté použít 'zadej <heslo>' pro získání pokladu.",
       "neighbors": [
         "tannyhill_church"
       ]

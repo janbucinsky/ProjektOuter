@@ -24,6 +24,14 @@ public class PrikazZadej implements IPrikaz {
             return "Tady není kam co zadávat.";
         }
 
+        if (!hrac.isWardPorazen()) {
+            return "Ward ti stojí v cestě! Musíš se s ním nejdřív vypořádat (použij 'mluv').";
+        }
+
+        if (!hrac.getInventar().obsahujePredmet("baterka")) {
+            return "K zadání hesla potřebuješ světlo! Bez baterky tu nic neuvidíš.";
+        }
+
         String heslo = parametry[1].trim();
         if (heslo.equalsIgnoreCase("MERCHANT")) {
             hra.vyhra();
