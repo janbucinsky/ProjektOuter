@@ -5,6 +5,8 @@ import Hra.Hrac;
 /**
  * Příkaz pro zobrazení nápovědy specifické pro danou lokaci.
  * Rady se mění podle toho, co má hráč v inventáři.
+ * 
+ * @author janbucinsky
  */
 public class PrikazNapoveda implements IPrikaz {
 

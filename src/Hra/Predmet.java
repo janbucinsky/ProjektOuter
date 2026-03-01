@@ -3,6 +3,8 @@ package Hra;
 /**
  * Třída Predmet reprezentuje věc, se kterou lze v rámci hry interagovat.
  * Předměty mají ID, název, popis a příznak, zda jsou užitečné.
+ * 
+ * @author janbucinsky
  */
 public class Predmet {
     private String id;

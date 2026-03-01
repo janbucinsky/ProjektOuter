@@ -2,6 +2,11 @@ package Prikazy;
 
 import Hra.Hrac;
 
+/**
+ * Příkaz pro vypsání nalezených písmen šifry.
+ * 
+ * @author janbucinsky
+ */
 public class PrikazZapis implements IPrikaz {
     private Hrac hrac;
 

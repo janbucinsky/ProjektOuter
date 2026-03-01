@@ -8,6 +8,8 @@ import Hra.Predmet;
 /**
  * Příkaz pro rozhovor s postavou.
  * Může spustit událost (např. předání předmětu od NPC).
+ * 
+ * @author janbucinsky
  */
 public class PrikazMluv implements IPrikaz {
     private Hrac hrac;

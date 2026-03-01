@@ -6,6 +6,8 @@ import java.util.Map;
 /**
  * Třída Inventar reprezentuje úložný prostor pro předměty (např. batoh hráče).
  * Má omezenou kapacitu a umožňuje vkládání, vybírání a prohledávání předmětů.
+ * 
+ * @author janbucinsky
  */
 public class Inventar {
 

@@ -5,6 +5,8 @@ import java.util.ArrayList;
 /**
  * Třída Lokace představuje jeden prostor (místnost, oblast) v herním světě.
  * Každá lokace má svůj název, popis, sousedy, předměty a postavy.
+ * 
+ * @author janbucinsky
  */
 public class Lokace {
     private String id;
@@ -14,6 +16,25 @@ public class Lokace {
     private ArrayList<Lokace> sousede = new ArrayList<>();
     private ArrayList<Predmet> predmety = new ArrayList<>();
     private ArrayList<Postava> postavy = new ArrayList<>();
+
+    /**
+     * Konstruktor vytvoření lokace (na testování).
+     * 
+     * @param id          unikátní ID lokace
+     * @param name        zobrazitelný název
+     * @param description detailní popis
+     */
+    public Lokace(String id, String name, String description) {
+        this.id = id;
+        this.name = name;
+        this.description = description;
+    }
+
+    /**
+     * Bezparametrický konstruktor pro potřeby GSONu.
+     */
+    public Lokace() {
+    }
 
     /**
      * @return unikátní ID lokace

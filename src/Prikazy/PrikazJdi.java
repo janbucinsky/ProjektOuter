@@ -6,6 +6,8 @@ import Hra.Lokace;
 /**
  * Příkaz pro pohyb mezi lokacemi.
  * Kontroluje platnost východů a specifické požadavky na lístek nebo baterku.
+ * 
+ * @author janbucinsky
  */
 public class PrikazJdi implements IPrikaz {
     private Hrac hrac;

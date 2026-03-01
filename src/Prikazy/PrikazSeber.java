@@ -4,6 +4,11 @@ import Hra.Hrac;
 import Hra.Predmet;
 import Hra.Lokace;
 
+/**
+ * Příkaz pro sebrání předmětu z lokace.
+ * 
+ * @author janbucinsky
+ */
 public class PrikazSeber implements IPrikaz {
     private Hrac hrac;
 

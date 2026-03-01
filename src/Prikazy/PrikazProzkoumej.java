@@ -6,6 +6,8 @@ import Hra.Predmet;
 
 /**
  * Příkaz pro prozkoumání okolí nebo konkrétního předmětu v lokaci.
+ * 
+ * @author janbucinsky
  */
 public class PrikazProzkoumej implements IPrikaz {
     private Hrac hrac;

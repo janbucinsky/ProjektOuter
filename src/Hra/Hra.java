@@ -4,8 +4,8 @@ import Prikazy.*;
 import java.util.Scanner;
 
 /**
- * Třída Hra představuje hlavní logiku adventury.
- * Inicializuje herní svět, zpracovává vstupy od hráče a řídí průběh hry.
+ * 
+ * @author janbucinsky
  */
 public class Hra {
 
@@ -19,24 +19,35 @@ public class Hra {
      * Načte data ze souboru, vytvoří hráče a zaregistruje dostupné příkazy.
      */
     public void inicialization() {
-        world = GameData.loadGameDataFromResources("/GameData.json");
-        Lokace startovniLokace = world.najdiLokaci("chateau");
-        hrac = new Hrac(startovniLokace);
-        platnePrikazy = new SeznamPrikazu();
+        try {
+            world = GameData.loadGameDataFromResources("/GameData.json");
+            if (world == null) {
+                throw new RuntimeException("Nepodařilo se načíst herní data.");
+            }
+            Lokace startovniLokace = world.najdiLokaci("chateau");
+            if (startovniLokace == null) {
+                throw new RuntimeException("Startovní lokace 'chateau' nebyla nalezena.");
+            }
+            hrac = new Hrac(startovniLokace);
+            platnePrikazy = new SeznamPrikazu();
 
-        platnePrikazy.vlozPrikaz(new PrikazSeber(hrac));
-        platnePrikazy.vlozPrikaz(new PrikazJdi(hrac));
-        platnePrikazy.vlozPrikaz(new PrikazPomoc(platnePrikazy));
-        platnePrikazy.vlozPrikaz(new PrikazKonec(this));
-        platnePrikazy.vlozPrikaz(new PrikazZahod(hrac));
-        platnePrikazy.vlozPrikaz(new PrikazInventar(hrac));
-        platnePrikazy.vlozPrikaz(new PrikazMluv(hrac));
-        platnePrikazy.vlozPrikaz(new PrikazProzkoumej(hrac));
-        platnePrikazy.vlozPrikaz(new PrikazNapoveda(hrac));
-        platnePrikazy.vlozPrikaz(new PrikazPouzij(hrac));
-        platnePrikazy.vlozPrikaz(new PrikazOdpovez(hrac));
-        platnePrikazy.vlozPrikaz(new PrikazZadej(this, hrac));
-        platnePrikazy.vlozPrikaz(new PrikazZapis(hrac));
+            platnePrikazy.vlozPrikaz(new PrikazSeber(hrac));
+            platnePrikazy.vlozPrikaz(new PrikazJdi(hrac));
+            platnePrikazy.vlozPrikaz(new PrikazPomoc(platnePrikazy));
+            platnePrikazy.vlozPrikaz(new PrikazKonec(this));
+            platnePrikazy.vlozPrikaz(new PrikazZahod(hrac));
+            platnePrikazy.vlozPrikaz(new PrikazInventar(hrac));
+            platnePrikazy.vlozPrikaz(new PrikazMluv(hrac));
+            platnePrikazy.vlozPrikaz(new PrikazProzkoumej(hrac));
+            platnePrikazy.vlozPrikaz(new PrikazNapoveda(hrac));
+            platnePrikazy.vlozPrikaz(new PrikazPouzij(hrac));
+            platnePrikazy.vlozPrikaz(new PrikazOdpovez(hrac));
+            platnePrikazy.vlozPrikaz(new PrikazZadej(this, hrac));
+            platnePrikazy.vlozPrikaz(new PrikazZapis(hrac));
+        } catch (Exception e) {
+            System.err.println("Chyba při inicializaci hry: " + e.getMessage());
+            konecHry = true;
+        }
     }
 
     /**
@@ -60,6 +71,7 @@ public class Hra {
                 konecHry = true;
             }
         }
+        scanner.close();
         System.out.println("Hra skončila.");
     }
 
@@ -70,8 +82,11 @@ public class Hra {
      * @return odpověď hry na zadaný příkaz
      */
     public String zpracujPrikaz(String radek) {
+        if (radek == null || radek.trim().isEmpty()) {
+            return "Musíš něco zadat.";
+        }
         // mezera mezi dvema slovama
-        String[] slova = radek.trim().split(" ");
+        String[] slova = radek.trim().split("\\s+");
         if (slova.length == 0) {
             return "Prázdný příkaz.";
         }

@@ -8,6 +8,8 @@ import Hra.Lokace;
  * Příkaz pro odpověď na otázky nebo hádanky postav.
  * Tento příkaz je klíčový pro získávání písmen hesla a postup ve finálním
  * souboji.
+ * 
+ * @author janbucinsky
  */
 public class PrikazOdpovez implements IPrikaz {
     private Hrac hrac;

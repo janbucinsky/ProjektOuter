@@ -4,6 +4,8 @@ package Hra;
  * Třída Hrac reprezentuje hráče v herním světě.
  * Uchovává informace o aktuální lokaci, inventáři, postupu v dialozích a
  * nalezených písmenech.
+ * 
+ * @author janbucinsky
  */
 public class Hrac {
     private Lokace aktualniLokace;

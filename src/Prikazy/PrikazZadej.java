@@ -4,6 +4,11 @@ import Hra.Hra;
 import Hra.Hrac;
 import Hra.Lokace;
 
+/**
+ * Příkaz pro zadání finálního hesla.
+ * 
+ * @author janbucinsky
+ */
 public class PrikazZadej implements IPrikaz {
     private Hra hra;
     private Hrac hrac;

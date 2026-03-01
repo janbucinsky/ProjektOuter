@@ -2,6 +2,8 @@ package Prikazy;
 
 /**
  * Příkaz pro zobrazení obecné nápovědy a seznamu všech platných příkazů.
+ * 
+ * @author janbucinsky
  */
 public class PrikazPomoc implements IPrikaz {
 

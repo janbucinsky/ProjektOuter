@@ -3,6 +3,11 @@ package Prikazy;
 import Hra.Hrac;
 import Hra.Predmet;
 
+/**
+ * Příkaz pro vyhození předmětu z inventáře do aktuální lokace.
+ * 
+ * @author janbucinsky
+ */
 public class PrikazZahod implements IPrikaz {
     private Hrac hrac;
 

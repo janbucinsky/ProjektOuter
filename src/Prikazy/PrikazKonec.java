@@ -4,6 +4,8 @@ import Hra.Hra;
 
 /**
  * Příkaz pro ukončení hry.
+ * 
+ * @author janbucinsky
  */
 public class PrikazKonec implements IPrikaz {
 
@@ -32,7 +34,6 @@ public class PrikazKonec implements IPrikaz {
         hra.setKonecHry(true);
         return "Hra ukončena.";
     }
-
 
     /**
      * @return klíčové slovo "konec"

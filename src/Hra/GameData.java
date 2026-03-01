@@ -10,6 +10,8 @@ import java.util.ArrayList;
  * Třída GameData slouží jako kontejner pro data načtená z JSON souboru.
  * Obsahuje seznamy předmětů, lokací a postav a metodu pro jejich načtení a
  * propojení.
+ * 
+ * @author janbucinsky
  */
 
 public class GameData {

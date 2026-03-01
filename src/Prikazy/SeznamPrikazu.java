@@ -5,6 +5,8 @@ import java.util.Map;
 
 /**
  * Třída SeznamPrikazu udržuje mapu všech platných příkazů ve hře.
+ * 
+ * @author janbucinsky
  */
 public class SeznamPrikazu {
 

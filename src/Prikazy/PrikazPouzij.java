@@ -7,6 +7,8 @@ import Hra.Predmet;
 /**
  * Příkaz pro použití předmětu z inventáře.
  * Umožňuje interakci s vybranými předměty v konkrétních lokacích.
+ * 
+ * @author janbucinsky
  */
 public class PrikazPouzij implements IPrikaz {
     private Hrac hrac;
@@ -65,7 +67,6 @@ public class PrikazPouzij implements IPrikaz {
                 return "Nic se nestalo.";
         }
     }
-
 
     /**
      * @return klíčové slovo "pouzij"

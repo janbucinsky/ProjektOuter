@@ -3,6 +3,8 @@ package Hra;
 /**
  * Třída Postava reprezentuje NPC v herním světě.
  * Každá postava má své jméno, roli, popis a úvodní proslov.
+ * 
+ * @author janbucinsky
  */
 public class Postava {
     private String id;

@@ -2,6 +2,8 @@ package Prikazy;
 
 /**
  * Rozhraní IPrikaz definuje metodu pro provádění herních příkazů.
+ * 
+ * @author janbucinsky
  */
 public interface IPrikaz {
     /**
