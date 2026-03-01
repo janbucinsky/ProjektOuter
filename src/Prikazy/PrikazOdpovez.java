@@ -4,13 +4,30 @@ import Hra.Hra;
 import Hra.Hrac;
 import Hra.Lokace;
 
+/**
+ * Příkaz pro odpověď na otázky nebo hádanky postav.
+ * Tento příkaz je klíčový pro získávání písmen hesla a postup ve finálním
+ * souboji.
+ */
 public class PrikazOdpovez implements IPrikaz {
     private Hrac hrac;
 
+    /**
+     * Konstruktor příkazu.
+     * 
+     * @param hrac aktuální hráč
+     */
     public PrikazOdpovez(Hrac hrac) {
         this.hrac = hrac;
     }
 
+    /**
+     * Provede zpracování odpovědi hráče na hádanku nebo v rámci souboje.
+     * Kontroluje přítomnost postavy v lokaci a vyhodnocuje správnost odpovědi A/B.
+     * 
+     * @param parametry parametry[1] je jméno postavy, parametry[2] je odpověď (A/B)
+     * @return reakce postavy na odpověď
+     */
     @Override
     public String proved(String[] parametry) {
         if (parametry.length < 3) {
@@ -56,10 +73,9 @@ public class PrikazOdpovez implements IPrikaz {
                 return "Pope: 'Tímhle jsi to akorát rozbil. Přemýšlej víc logicky.'";
 
             case "sarah":
-            case "sarah_cameron":
                 if (odpoved.equals("B")) {
-                    if (hrac.getInventar().obsahujePredmet("zlaty_nuget")) {
-                        hrac.getInventar().vyberPredmet("zlaty_nuget");
+                    if (hrac.getInventar().obsahujePredmet("nuget")) {
+                        hrac.getInventar().vyberPredmet("nuget");
                         hrac.pridejPismeno("A");
                         hrac.pridejPismeno("N");
                         return "Sarah: 'Díky za ten nuget, tohle dokazuje, že jsi měl pravdu. Tady jsou písmena A a N.' (Zlatý nuget byl předán a písmena A, N byla zapsána)";
@@ -72,12 +88,11 @@ public class PrikazOdpovez implements IPrikaz {
             case "topper":
                 if (odpoved.equals("A")) {
                     hrac.pridejPismeno("T");
-                    return "Topper: 'Správně... v kostele všechno začíná i končí. Ber si T a zmiz.' (Písmeno T bylo zapsáno)";
+                    return "Topper: 'Správně... Ber si T a zmiz.' (Písmeno T bylo zapsáno)";
                 }
                 return "Topper: 'Ztrať se, než zavolám šerifa!'";
 
             case "ward":
-            case "ward_cameron":
                 if (hrac.isWardPorazen()) {
                     return "Ward: ... (Ward leží v bezvědomí na zemi. Cesta ke studni je volná.)";
                 }
@@ -122,6 +137,9 @@ public class PrikazOdpovez implements IPrikaz {
         }
     }
 
+    /**
+     * @return klíčové slovo "odpovez"
+     */
     @Override
     public String getJmeno() {
         return "odpovez";

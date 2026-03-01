@@ -11,6 +11,14 @@ public class PrikazSeber implements IPrikaz {
         this.hrac = hrac;
     }
 
+    /**
+     * Provede sebrání předmětu z aktuální lokace a jeho vložení do inventáře.
+     * Kontroluje, zda předmět v lokaci existuje a zda má hráč volné místo v
+     * inventáři.
+     * 
+     * @param parametry parametry[1] je název nebo ID předmětu k sebrání
+     * @return výsledek akce (potvrzení sebrání nebo chybová zpráva)
+     */
     @Override
     public String proved(String[] parametry) {
         if (parametry.length < 2) {
@@ -33,6 +41,9 @@ public class PrikazSeber implements IPrikaz {
         }
     }
 
+    /**
+     * @return klíčové slovo "seber"
+     */
     @Override
     public String getJmeno() {
         return "seber";

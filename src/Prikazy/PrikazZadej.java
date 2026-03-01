@@ -13,6 +13,13 @@ public class PrikazZadej implements IPrikaz {
         this.hrac = hrac;
     }
 
+    /**
+     * Provede zadání hesla u finálního objektu (studny).
+     * Kontroluje lokaci (Old Well), porážku Warda a přítomnost baterky (světla).
+     * 
+     * @param parametry parametry[1] je zadané heslo
+     * @return zpráva o úspěchu (výhra) nebo nesprávném hesle
+     */
     @Override
     public String proved(String[] parametry) {
         if (parametry.length < 2) {
@@ -20,7 +27,7 @@ public class PrikazZadej implements IPrikaz {
         }
 
         Lokace aktualni = hrac.getAktualniLokace();
-        if (!aktualni.getId().equals("old_well")) {
+        if (!aktualni.getId().equals("well")) {
             return "Tady není kam co zadávat.";
         }
 
@@ -41,6 +48,9 @@ public class PrikazZadej implements IPrikaz {
         }
     }
 
+    /**
+     * @return klíčové slovo "zadej"
+     */
     @Override
     public String getJmeno() {
         return "zadej";

@@ -2,49 +2,49 @@
   "items": [
     {
       "id": "listek",
-      "name": "Lístek na přívoz",
+      "name": "Lístek na přívoz (listek)",
       "type": "TICKET",
       "description": "Propustka do bohaté čtvrti Figure Eight. Nezbytný pro lokaci The Ferry Crossing.",
       "isUseful": true
     },
     {
       "id": "baterka",
-      "name": "Baterka",
+      "name": "Baterka (baterka)",
       "type": "TOOL",
       "description": "Robustní svítilna od Kiary. Nutná pro průzkum krypty pod kostelem Tannyhill Church.",
       "isUseful": true
     },
     {
-      "id": "zlaty_nuget",
-      "name": "Zlatý nuget",
+      "id": "nuget",
+      "name": "Zlatý nuget (nuget)",
       "type": "EVIDENCE",
       "description": "Úlomek zlata z Royal Merchant. Klíč k přesvědčení Sarah Cameron.",
       "isUseful": true
     },
     {
-      "id": "stara_bojka",
-      "name": "Stará bójka",
+      "id": "bojka",
+      "name": "Stará bójka (bojka)",
       "type": "TRAP",
       "description": "Zbytečný nález z vrakoviště, který jen zabírá místo v inventáři.",
       "isUseful": false
     },
     {
-      "id": "prazdna_plechovka",
-      "name": "Prázdná plechovka od sody",
+      "id": "plechovka",
+      "name": "Prázdná plechovka (plechovka)",
       "type": "TRAP",
       "description": "Odpad z restaurace The Wreck bez reálného využití.",
       "isUseful": false
     },
     {
-      "id": "rezavy_hrebik",
-      "name": "Rezavý hřebík",
+      "id": "hrebik",
+      "name": "Rezavý hřebík (hrebik)",
       "type": "TRAP",
       "description": "Nález z kostela, který má za úkol mást hráče.",
       "isUseful": false
     },
     {
       "id": "kompas",
-      "name": "kompas",
+      "name": "kompas (kompas)",
       "type": "QUEST_ITEM",
       "description": "Tátův starý kompas se šifrou.",
       "isUseful": true
@@ -52,7 +52,7 @@
   ],
   "characters": [
     {
-      "id": "john_b",
+      "id": "john",
       "name": "John B.",
       "role": "PLAYER",
       "description": "Vůdce Pogues hledající poklad z Royal Merchant.",
@@ -64,15 +64,15 @@
       "name": "Heyward",
       "role": "QUEST_GIVER",
       "description": "Majitel obchodu v přístavu. Předá úvodní indicii.",
-      "homeLocationId": "cut_harbor",
+      "homeLocationId": "harbor",
       "proslov": "Ahoj Johne B! Mám pro tebe lístek na přívoz a taky vím, jaké je první písmenko hesla, ale musíš mi slíbit, že to nikomu neřekneš (Odpověz A: Slibuji / B: Nezájem)"
     },
     {
       "id": "kiara",
-      "name": "Kiara (Kie)",
+      "name": "Kiara",
       "role": "ALLY",
       "description": "Členka Pogues z restaurace The Wreck. Předá baterku a část hesla.",
-      "homeLocationId": "the_wreck",
+      "homeLocationId": "wreck",
       "proslov": "Ahoj Johne B! Mám pro tebe baterku a písmenko, ale nejdřív musíš uhodnout mou hádanku: Čím víc toho je, tím míň toho vidíš. Co je to? (Odpověz A: Mlha / B: Tma)"
     },
     {
@@ -92,11 +92,11 @@
       "proslov": "Johne, ta šifra dává smysl. Ale abys dostal další dílek skládačky, musíš použít hlavu: Co je tak křehké, že i když vyslovíš jeho jméno, tak ho rozbiješ? (Odpověz A: Sklo / B: Ticho)"
     },
     {
-      "id": "sarah_cameron",
+      "id": "sarah",
       "name": "Sarah Cameron",
       "role": "KEY_ALLY",
       "description": "Dcera Warda. Předá důležité písmeno z otcovy schránky.",
-      "homeLocationId": "figure_eight",
+      "homeLocationId": "eight",
       "proslov": "Můj táta něco skrývá... Pokud mi přineseš ten zlatý nuget, dám ti písmena z jeho schránky, která ti chybí do hesla. Máš ho u sebe? (Odpověz A: Nemám / B: Tady je)"
     },
     {
@@ -104,15 +104,15 @@
       "name": "Topper",
       "role": "OBSTACLE",
       "description": "Překážka u kostela, kterou je třeba přelstít.",
-      "homeLocationId": "tannyhill_church",
+      "homeLocationId": "church",
       "proslov": "Co tu pohledáváš, Pogue? Uhodni tohle: Jsem srdcem věže, ale nejsem živý. Volám lidi k sobě, i když nemám hlas. Co jsem? (Odpověz A: Farář / B: Zvon)"
     },
     {
-      "id": "ward_cameron",
+      "id": "ward",
       "name": "Ward Cameron",
       "role": "ANTAGONIST",
       "description": "Hlavní záporák a rival. Finální střet u staré studny.",
-      "homeLocationId": "old_well",
+      "homeLocationId": "well",
       "proslov": "Jsi stejný jako tvůj otec, Johne B. Myslíš si, že si můžeš jen tak vzít, co je moje. Vzdej to. (Odpověz A: Nejsem jako on! / B: Možná máš pravdu.)"
     }
   ],
@@ -122,38 +122,38 @@
       "name": "The Chateau",
       "description": "Tvůj domov, kde objevuješ tátův kompas se šifrou.",
       "neighbors": [
-        "cut_harbor"
+        "harbor"
       ],
       "predmety": [
         {
           "id": "kompas",
-          "name": "kompas",
+          "name": "kompas (kompas)",
           "description": "Tátův starý kompas se šifrou."
         }
       ]
     },
     {
-      "id": "cut_harbor",
+      "id": "harbor",
       "name": "The Cut Harbor",
       "description": "Přístav, kde Heyward předává první indicii a lístek na přívoz.",
       "neighbors": [
         "chateau",
-        "the_wreck"
+        "wreck"
       ],
       "predmety": []
     },
     {
-      "id": "the_wreck",
+      "id": "wreck",
       "name": "The Wreck",
       "description": "Restaurace, kde ti Kiara dá baterku a další část hesla.",
       "neighbors": [
-        "cut_harbor",
+        "harbor",
         "junkyard"
       ],
       "predmety": [
         {
-          "id": "prazdna_plechovka",
-          "name": "Prázdná plechovka od sody",
+          "id": "plechovka",
+          "name": "Prázdná plechovka (plechovka)",
           "description": "Odpad z restaurace The Wreck bez reálného využití."
         }
       ]
@@ -163,18 +163,18 @@
       "name": "Vrakoviště",
       "description": "JJho revír. Pozor na zbytečné věci, hledej další část šifry.",
       "neighbors": [
-        "the_wreck",
+        "wreck",
         "lighthouse"
       ],
       "predmety": [
         {
-          "id": "stara_bojka",
-          "name": "Stará bójka",
+          "id": "bojka",
+          "name": "Stará bójka (bojka)",
           "description": "Zbytečný nález z vrakoviště, který jen zabírá místo v inventáři."
         },
         {
-          "id": "zlaty_nuget",
-          "name": "Zlatý nuget",
+          "id": "nuget",
+          "name": "Zlatý nuget (nuget)",
           "description": "Úlomek zlata z Royal Merchant. Klíč k přesvědčení Sarah Cameron."
         }
       ]
@@ -185,49 +185,49 @@
       "description": "Old Baldy Lighthouse, kde Pope vysvětluje logiku šifry.",
       "neighbors": [
         "junkyard",
-        "ferry_crossing"
+        "ferry"
       ]
     },
     {
-      "id": "ferry_crossing",
+      "id": "ferry",
       "name": "The Ferry Crossing",
       "description": "Hraniční přechod. Musíš mít lístek, abys mohl do Figure Eight.",
       "neighbors": [
         "lighthouse",
-        "figure_eight"
+        "eight"
       ]
     },
     {
-      "id": "figure_eight",
+      "id": "eight",
       "name": "Figure Eight",
       "description": "Čtvrť Kooks. Sarah ti zde pomůže s písmenem z tátovy schránky.",
       "neighbors": [
-        "ferry_crossing",
-        "tannyhill_church"
+        "ferry",
+        "church"
       ]
     },
     {
-      "id": "tannyhill_church",
+      "id": "church",
       "name": "Tannyhill Church",
       "description": "Kostel s kryptou. Topper hlídkuje venku, ty musíš dovnitř.",
       "neighbors": [
-        "figure_eight",
-        "old_well"
+        "eight",
+        "well"
       ],
       "predmety": [
         {
-          "id": "rezavy_hrebik",
-          "name": "Rezavý hřebík",
+          "id": "hrebik",
+          "name": "Rezavý hřebík (hrebik)",
           "description": "Nález z kostela, který má za úkol mást hráče."
         }
       ]
     },
     {
-      "id": "old_well",
+      "id": "well",
       "name": "Stará studna",
       "description": "Pro dohrání hry musíš mít u sebe baterku, porazit Warda (příkaz 'mluv') a poté použít 'zadej <heslo>' pro získání pokladu.",
       "neighbors": [
-        "tannyhill_church"
+        "church"
       ]
     }
   ]

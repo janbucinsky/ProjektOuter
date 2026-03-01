@@ -10,6 +10,12 @@ public class PrikazZahod implements IPrikaz {
         this.hrac = hrac;
     }
 
+    /**
+     * Vyhodí předmět z inventáře do aktuální lokace.
+     * 
+     * @param parametry parametry[1] je název předmětu k zahození
+     * @return potvrzení o zahození nebo chybová zpráva
+     */
     @Override
     public String proved(String[] parametry) {
         if (parametry.length < 2) {
@@ -27,6 +33,9 @@ public class PrikazZahod implements IPrikaz {
         }
     }
 
+    /**
+     * @return klíčové slovo "zahod"
+     */
     @Override
     public String getJmeno() {
         return "zahod";

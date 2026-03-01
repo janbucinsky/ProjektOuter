@@ -3,18 +3,34 @@ package Prikazy;
 import Hra.Hrac;
 import Hra.Lokace;
 
+/**
+ * Příkaz pro pohyb mezi lokacemi.
+ * Kontroluje platnost východů a specifické požadavky na lístek nebo baterku.
+ */
 public class PrikazJdi implements IPrikaz {
     private Hrac hrac;
 
+    /**
+     * Konstruktor příkazu.
+     * 
+     * @param hrac aktuální hráč
+     */
     public PrikazJdi(Hrac hrac) {
 
         this.hrac = hrac;
     }
 
+    /**
+     * Provede přesun hráče do sousední lokace.
+     * Provádí kontroly na existenci lístku u Figure Eight a baterky u Old Well.
+     * 
+     * @param parametry pole parametrů, kde parametry[1] je název cílové lokace
+     * @return výsledek pohybu (popis nové lokace nebo chybová zpráva)
+     */
     @Override
     public String proved(String[] parametry) {
         if (parametry.length < 2) {
-            return "Musíš napsat, kam chceš jít. např: jdi cut_harbor";
+            return "Musíš napsat, kam chceš jít. např: jdi harbor";
         }
 
         String kam = parametry[1];
@@ -33,10 +49,10 @@ public class PrikazJdi implements IPrikaz {
         if (cilova != null) {
             String zpravaOListku = "";
 
-            if (cilova.getId().equals("figure_eight")) {
+            if (cilova.getId().equals("eight")) {
                 if (!hrac.isPrevozPouzit()) {
                     if (hrac.getInventar().getPredmet("listek") == null) {
-                        return "Prevoznik te nechce pustit na druhou stranu, potrebujes listek (ten se nachází skoro na začatku, v cut_harbor).";
+                        return "Prevoznik te nechce pustit na druhou stranu, potrebujes listek (ten se nachází skoro na začatku, v harbor).";
                     } else {
                         hrac.getInventar().vyberPredmet("listek");
                         hrac.setPrevozPouzit(true);
@@ -45,7 +61,7 @@ public class PrikazJdi implements IPrikaz {
                 }
             }
 
-            if (cilova.getId().equals("old_well")) {
+            if (cilova.getId().equals("well")) {
                 if (hrac.getInventar().getPredmet("baterka") == null) {
                     return "V kryptě je úplná tma! Bez baterky (kterou má Kiara) se dál nedostaneš.";
                 }
@@ -74,6 +90,9 @@ public class PrikazJdi implements IPrikaz {
         }
     }
 
+    /**
+     * @return klíčové slovo "jdi"
+     */
     @Override
     public String getJmeno() {
         return "jdi";

@@ -4,13 +4,28 @@ import Hra.Hrac;
 import Hra.Lokace;
 import Hra.Predmet;
 
+/**
+ * Příkaz pro použití předmětu z inventáře.
+ * Umožňuje interakci s vybranými předměty v konkrétních lokacích.
+ */
 public class PrikazPouzij implements IPrikaz {
     private Hrac hrac;
 
+    /**
+     * Konstruktor příkazu.
+     * 
+     * @param hrac aktuální hráč
+     */
     public PrikazPouzij(Hrac hrac) {
         this.hrac = hrac;
     }
 
+    /**
+     * Provede použití předmětu z inventáře.
+     * 
+     * @param parametry parametry[1] je název/ID předmětu
+     * @return výsledek použití předmětu
+     */
     @Override
     public String proved(String[] parametry) {
         if (parametry.length < 2) {
@@ -41,7 +56,7 @@ public class PrikazPouzij implements IPrikaz {
                     return "Ukázal jsi lístek. Převozník kývnul: 'Můžeš nastoupit na loď do Figure Eight.'";
                 }
                 return "Tady lístek nikomu neukazuj. (bude se ti hodit až v ferry_crossing)";
-            case "zlaty_nuget":
+            case "nuget":
                 if (aktualniLokace.getId().equals("figure_eight")) {
                     return "dopsat";
                 }
@@ -51,6 +66,10 @@ public class PrikazPouzij implements IPrikaz {
         }
     }
 
+
+    /**
+     * @return klíčové slovo "pouzij"
+     */
     @Override
     public String getJmeno() {
         return "pouzij";

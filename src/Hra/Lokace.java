@@ -2,6 +2,10 @@ package Hra;
 
 import java.util.ArrayList;
 
+/**
+ * Třída Lokace představuje jeden prostor (místnost, oblast) v herním světě.
+ * Každá lokace má svůj název, popis, sousedy, předměty a postavy.
+ */
 public class Lokace {
     private String id;
     private String name;
@@ -11,28 +15,65 @@ public class Lokace {
     private ArrayList<Predmet> predmety = new ArrayList<>();
     private ArrayList<Postava> postavy = new ArrayList<>();
 
+    /**
+     * @return unikátní ID lokace
+     */
     public String getId() {
         return id;
     }
+
+    /**
+     * @return zobrazitelný název lokace
+     */
     public String getName() {
         return name;
     }
+
+    /**
+     * @return dlouhý popis lokace
+     */
     public String getDescription() {
         return description;
     }
+
+    /**
+     * @return seznam ID sousedních lokací (z JSONu)
+     */
     public ArrayList<String> getNeighborIds() {
         return neighbors;
     }
+
+    /**
+     * Přidá sousední lokaci k této lokaci.
+     * 
+     * @param soused sousední lokace
+     */
     public void pridejSouseda(Lokace soused) {
         sousede.add(soused);
     }
+
+    /**
+     * @return seznam instancí sousedních lokací
+     */
     public ArrayList<Lokace> getSousede() {
         return sousede;
     }
+
+    /**
+     * Vloží předmět do této lokace.
+     * 
+     * @param predmet předmět k vložení
+     */
     public void vlozPredmet(Predmet predmet) {
         predmety.add(predmet);
     }
 
+    /**
+     * Vyjme (sebere) předmět z lokace.
+     * 
+     * @param nazevPredmetu název nebo ID předmětu
+     * @return vyjmutý předmět nebo null
+     */
     public Predmet seberPredmet(String nazevPredmetu) {
         for (Predmet p : predmety) {
             if (p.getName().equalsIgnoreCase(nazevPredmetu) || p.getId().equalsIgnoreCase(nazevPredmetu)) {
@@ -43,6 +84,12 @@ public class Lokace {
         return null;
     }
 
+    /**
+     * Zjistí, zda se v lokaci nachází daný předmět.
+     * 
+     * @param nazevPredmetu název nebo ID předmětu
+     * @return true, pokud tu je
+     */
     public boolean obsahujePredmet(String nazevPredmetu) {
         for (Predmet p : predmety) {
             if (p.getName().equalsIgnoreCase(nazevPredmetu) || p.getId().equalsIgnoreCase(nazevPredmetu)) {
@@ -52,6 +99,9 @@ public class Lokace {
         return false;
     }
 
+    /**
+     * @return textový seznam předmětů v lokaci
+     */
     public String getSeznamPredmetu() {
         if (predmety.isEmpty()) {
             return "nic";
@@ -66,6 +116,9 @@ public class Lokace {
         return seznam.toString();
     }
 
+    /**
+     * @return textový seznam postav v lokaci
+     */
     public String getSeznamPostav() {
         if (postavy.isEmpty()) {
             return "nikdo";
@@ -80,10 +133,21 @@ public class Lokace {
         return seznam.toString();
     }
 
+    /**
+     * Vloží postavu do lokace.
+     * 
+     * @param postava postava k přidání
+     */
     public void vlozPostavu(Postava postava) {
         postavy.add(postava);
     }
 
+    /**
+     * Vrátí postavu podle jména nebo ID.
+     * 
+     * @param jmeno jméno nebo ID hledané postavy
+     * @return nalezená postava nebo null
+     */
     public Postava getPostava(String jmeno) {
         for (Postava p : postavy) {
             if (p.getJmeno().equalsIgnoreCase(jmeno) || (p.getId() != null && p.getId().equalsIgnoreCase(jmeno))) {
@@ -93,6 +157,12 @@ public class Lokace {
         return null;
     }
 
+    /**
+     * Zjistí, zda je postava v lokaci.
+     * 
+     * @param jmeno jméno nebo ID postavy
+     * @return true, pokud tu je
+     */
     public boolean obsahujePostavu(String jmeno) {
         return getPostava(jmeno) != null;
     }

@@ -3,6 +3,10 @@ package Hra;
 import Prikazy.*;
 import java.util.Scanner;
 
+/**
+ * Třída Hra představuje hlavní logiku adventury.
+ * Inicializuje herní svět, zpracovává vstupy od hráče a řídí průběh hry.
+ */
 public class Hra {
 
     private GameData world;
@@ -10,6 +14,10 @@ public class Hra {
     private SeznamPrikazu platnePrikazy;
     private boolean konecHry = false;
 
+    /**
+     * Metoda pro inicializaci hry.
+     * Načte data ze souboru, vytvoří hráče a zaregistruje dostupné příkazy.
+     */
     public void inicialization() {
         world = GameData.loadGameDataFromResources("/GameData.json");
         Lokace startovniLokace = world.najdiLokaci("chateau");
@@ -31,12 +39,15 @@ public class Hra {
         platnePrikazy.vlozPrikaz(new PrikazZapis(hrac));
     }
 
+    /**
+     * Hlavní smyčka hry. Zobrazí úvodní informace a čeká na vstupy uživatele.
+     */
     public void doPlay() {
         System.out.println("Vítejte ve hře!");
         System.out.println("Jste v: " + hrac.getAktualniLokace().getName());
         System.out.println(hrac.getAktualniLokace().getDescription());
         System.out.println("Dostupné příkazy: " + platnePrikazy.vratNazvyPrikazu());
-        System.out.println("Dostupné lokace: cut_harbor");
+        System.out.println("Dostupné lokace: harbor");
 
         Scanner scanner = new Scanner(System.in);
         while (!konecHry) {
@@ -52,6 +63,12 @@ public class Hra {
         System.out.println("Hra skončila.");
     }
 
+    /**
+     * Zpracuje zadaný řetězec jako příkaz.
+     * 
+     * @param radek textový vstup od uživatele
+     * @return odpověď hry na zadaný příkaz
+     */
     public String zpracujPrikaz(String radek) {
         // mezera mezi dvema slovama
         String[] slova = radek.trim().split(" ");
@@ -68,14 +85,23 @@ public class Hra {
         }
     }
 
+    /**
+     * @param konecHry nastaví příznak konce hry
+     */
     public void setKonecHry(boolean konecHry) {
         this.konecHry = konecHry;
     }
 
+    /**
+     * @return true, pokud hra skončila
+     */
     public boolean isKonecHry() {
         return konecHry;
     }
 
+    /**
+     * Nastaví stav výhry a ukončí hru.
+     */
     public void vyhra() {
         this.konecHry = true;
         System.out.println("konec hry");
